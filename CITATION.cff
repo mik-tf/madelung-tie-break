@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "A first-order Madelung tie-break on the round four-sphere: Kelvin parity, convex order and the Thomas-Fermi field"
+type: software
+authors:
+  - family-names: Perreault
+    given-names: Michaël
+version: "1.0"
+date-released: "2026-11-25"
+license: CC-BY-4.0
+repository-code: "https://github.com/mik-tf/madelung-tie-break"
+keywords:
+  - Madelung rule
+  - Demkov-Ostrovsky
+  - Gegenbauer polynomials
+  - convex order
+  - Thomas-Fermi equation
+  - interval arithmetic
