@@ -2,7 +2,9 @@
 
 Author: Michaël Perreault
 
-Version 1.0.
+Version 1.0.1.
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24533673.svg)](https://doi.org/10.5281/zenodo.24533673)
 
 In the Demkov-Ostrovsky model of the Madelung rule the levels with equal N = n + l are degenerate at zero energy. The rule's second part, lower n first within a group, is not explained by the model. This paper proves that within every group the laws of |cos θ| for consecutive l are in strict increasing convex order (not first-order dominance: the distribution functions cross), and deduces a first-order tie-break for perturbations of the Tietz field that are Kelvin-even, increasing and convex. For the Thomas-Fermi field an interval computation certifies the splitting in every group with N <= 17, and a shooting check finds no level crossing along the path from the Tietz field for N <= 12. It follows [paper 1](https://doi.org/10.5281/zenodo.24522163).
 
@@ -42,4 +44,4 @@ It runs the quick checks and prints PASS or FAIL for each (about 5 minutes on on
 
 ## Cite as
 
-Perreault, M. A first-order Madelung tie-break on the round four-sphere: Kelvin parity, convex order and the Thomas-Fermi field, version 1.0. https://github.com/mik-tf/madelung-tie-break (DOI to be added). See [CITATION.cff](CITATION.cff).
+Perreault, M. A first-order Madelung tie-break on the round four-sphere: Kelvin parity, convex order and the Thomas-Fermi field, version 1.0.1. https://github.com/mik-tf/madelung-tie-break (DOI: [10.5281/zenodo.24533673](https://doi.org/10.5281/zenodo.24533673) (all versions; v1.0 is [10.5281/zenodo.24533674](https://doi.org/10.5281/zenodo.24533674))). See [CITATION.cff](CITATION.cff).
