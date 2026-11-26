@@ -21,7 +21,7 @@ This work is licensed under the Creative Commons Attribution 4.0 International L
 \par\endgroup
 ```
 
-# Introduction
+# Introduction {#p5.intro}
 
 The Madelung rule has two parts: levels fill in order of increasing $N=n+l$, and levels with equal $N$ fill in order of increasing $n$ (decreasing $l$). Demkov and Ostrovsky modelled the first part by the zero-energy coupling problem for the Tietz weight [DO71, DO72]; its coupling constants depend on $N$ only, so every group is degenerate. Paper 1 [P1] (https://doi.org/10.5281/zenodo.24522163) identifies this problem with the circle-invariant conformal Laplacian of the round four-sphere, and the Kelvin inversion with the swap of its poles. That explains the degeneracy of a group. It leaves the order inside a group as an assumption of the model: nothing in the sphere picture says why $3p$ should lie below $4s$. This paper asks why lower $n$ comes first.
 
@@ -35,7 +35,7 @@ We do not claim to derive real atoms, the spin factor, or the order between grou
 
 Credit. Goudsmit and Richards argue part B of the rule by a gradual transition between the Thomas-Fermi limit and the hydrogenic limit; that is the qualitative form of our statement, without perturbation theory or a theorem. Negadi and Kibler [NK92] (a $q$-deformation) reproduce the order with a fitted parameter and prove no ordering. Novaro and Wolf [NW71] are described in the citing literature as using an $l(l+1)$ term in a rotor Hamiltonian; we could not obtain the text, and the public record we found shows no ordering proved there. The Laguerre inequality is classical [PS, CV90, Car09], the Gegenbauer facts are in [Sz, DLMF], the stochastic orders, and the sign-change (cut) criterion for the convex order, in [SS07, MS02, KN63], and the shape-invariant structure behind Lemma A in [CKS95] (the partner identity behind Lemma A is already contained there, and Lemma A is not claimed as new). To our knowledge, in the sources we could consult, the convex order between consecutive blocks, its closed form and the first-order theorem do not appear earlier. We could not consult the full texts of Novaro and Wolf (1971), Kitagawara and Barut (1983, 1984), Ostrovsky (1981, 2001, 2003), Allen and Knight (2002) or Wong (1979); they may contain related statements. We also did not read the full text of the Russian original of [DO72], nor Boyd [Boy13] beyond the digits recorded from it (Section 6).
 
-# Setup
+# Setup {#p5.setup}
 
 We use the setting of paper 1 [P1] (https://doi.org/10.5281/zenodo.24522163) and recall only what is needed. The zero-energy coupling problem is
 $$-\Delta\psi=Z\,w\,\psi\quad\text{in }D^{1,2}(\mathbb R^3),\qquad w(x)=\frac{2}{|x|(1+|x|/R)^2},$$
@@ -79,7 +79,7 @@ A state is phase-free (invariant under the circle) exactly for $j=2l$ ([P1], The
 
 The zeros of $C_j$ are real, simple and in $(-1,1)$.
 
-# Why first-order dominance fails
+# Why first-order dominance fails {#p5.first-order-fails}
 
 The first-order stochastic order between consecutive blocks fails: their distribution functions cross. For the phase-free pairs, $F_{l+1}-F_l$ changes sign $k-2l-2$ times on $(0,1)$ in the exact count for $N\le12$ (observed, not explained: Lemma A below explains each one-step difference $G_j-G_{j+1}$, not this count). Dominance fails for at least one pair in every group $4\le N\le16$ (exact check, in rational arithmetic on the differences of the distribution functions; the first counterexample is $N=4$, $l=0$), and for the last pair it can hold when $k$ is even (for example $N=5$, $l=1$). The Karlin-Novikoff single-crossing criterion therefore does not apply, and the order that does hold is the convex one.
 
@@ -90,9 +90,9 @@ The right side is $-z^{e}C\,C'$ up to a constant and changes sign $2(k-j)-1$ tim
 
 ![Why first-order dominance fails and the convex order holds, for $N=6$ and the pairs $l=0,1$. Left: $F_{l+1}(t)-F_l(t)$ changes sign (the small negative parts are shaded and magnified in the lower panel), so $p_{2l+2}$ does not dominate $p_{2l}$ in the ordinary sense. Right: $H_l(t)=\int_t^1(F_{l+1}-F_l)\,ds$ stays positive on $(0,1)$, which is the convex order and is what the tie-break needs. The negative parts are small: at their deepest, $0.004$ below zero for $l=0$ and $0.017$ for $l=1$.](figures/fig2_dominance_vs_convex.png)
 
-# The convex order
+# The convex order {#p5.convex-order}
 
-## Statements
+## Statements {#p5.stmt-convex}
 
 Recall that $X$ precedes $Y$ in the increasing convex order if $\mathbb E\,h(X)\le\mathbb E\,h(Y)$ for every increasing convex $h$, equivalently $\mathbb E(X-t)^+\le\mathbb E(Y-t)^+$ for all $t$ (Shaked and Shanthikumar 2007, Thm 4.A.2); in the convex order the same holds for all convex $h$, equivalently $\mathbb E|X-t|\le\mathbb E|Y-t|$ for all $t$ and equal means (Thm 3.A.1).
 
@@ -108,7 +108,7 @@ with $\tau_{2l}=(k-2l)(k+2l+3)$, $\tau_{2l+1}=(k-2l-1)(k+2l+4)$, and $H_l>0$ on 
 
 Theorem 2 is the convex-order statement of the paper. The physics enters through Theorem 3.
 
-## Proof sketch
+## Proof sketch {#p5.proof-convex}
 
 Each step is proved in the appendix.
 
@@ -121,7 +121,7 @@ Each step is proved in the appendix.
 
 ![The function $Q_j=C_j'^2-\frac{j+1}{j+2}\,C_jC_j''$ of (4), divided by its value $Q_j(0)$, on $0\le|c|\le1$ for three blocks $(k,j)=(4,1),(7,2),(10,4)$. It stays strictly positive (log scale), also at the zeros of $C_j$ (circles on the lower edge). Exact positivity for every $N\le30$ is checked by `tiebreak_proof_check.py`.](figures/fig3_Q_positive.png)
 
-# The first-order tie-break
+# The first-order tie-break {#p5.tie-break}
 
 **Theorem 3.** Fix $R>0$ and a bounded measurable $g$ on $[-1,1]$. For $|\epsilon|\sup|g|<1$ let $Z_{(N,l)}(\epsilon)$ be the eigenvalue of
 $$-\Delta\psi=Z\,w\,(1+\epsilon\,g(c))\,\psi\quad\text{in }D^{1,2}(\mathbb R^3),\qquad c=\frac{R-r}{R+r}$$
@@ -131,7 +131,7 @@ If $h$ is increasing and convex on $[0,1]$ and not constant on $[0,1)$, then $Z_
 
 **Proof sketch.** (i) A bounded weight change is form-bounded (Hardy, [P1] (3.1)), so the pencil is analytic in $\epsilon$ (Kato [Kat76]). (ii) $g$ depends on $r$ alone, so $l$ stays a good quantum number, the $m$ degeneracy is exact, and each radial eigenvalue near $Z_N$ is simple: non-degenerate perturbation theory sector by sector. (iii) Hellmann-Feynman for the pencil gives $Z_{(N,l)}'(0)=-Z_N\int wg\psi^2/\int w\psi^2$. (iv) The change of variables $c=(R-r)/(R+r)$ maps the radial density to $p_{2l}$, so the derivative is $-Z_N\mathbb E_{p_{2l}}[g]=Z_N\mathbb E_{p_{2l}}[h]$, the odd part dropping out because $p_{2l}$ is even. (v) Signs: a weaker field needs a larger coupling, so $Z_{(N,l)}$ rises by $\epsilon Z_N\mathbb E_{p_{2l}}[h]$; by Theorem 2 the shift is smaller for larger $l$, so the level with larger $l$ (smaller $n=N-l$) reaches threshold first. Details in A.4.
 
-# The Thomas-Fermi field
+# The Thomas-Fermi field {#p5.tf-field}
 
 **The nearest Tietz field.** The Thomas-Fermi screening function $\varphi_{\rm TF}(\xi)$ solves $\varphi''=\varphi^{3/2}/\sqrt\xi$ with $\varphi(0)=1$ and $\varphi(\infty)=0$, where $\xi$ is the Thomas-Fermi variable. Its slope at the origin is $B=-1.5880710226113753127\ldots$ (value recorded from Boyd [Boy13], computed to 60 digits by `tf_accurate.py`, agreeing with all 38 digits recorded from [Boy13], and confirmed to 35 digits by the interval sandwich of Appendix A.5). The function was introduced by Fermi [Fer28] and first tabulated accurately by Baker [Bak30]; Tietz [Ti55] approximated it by $(1+a\xi)^{-2}$, which is the weight $w$ of Section 2 with $r/R=a\xi$. We take for $(a,A_{\rm T})$ the pair that minimises, over $a>0$ and $A>0$ jointly, the weighted $L^2$ distance
 $$\int_0^\infty\xi\,\bigl(\varphi_{\rm TF}(\xi)-A\,(1+a\xi)^{-2}\bigr)^2\,d\xi$$
@@ -165,7 +165,7 @@ Applied to the Thomas-Fermi field at its first threshold coupling ($c_0=1.059264
 
 ![Where the Thomas-Fermi field departs from the round sphere: the ratio $\mathrm{Scal}_{\rm TF}/\mathrm{Scal}_{\rm round}$ of the conformal scalar curvatures against $c$ (the sign convention of [P1]). On the nucleus side ($c>0$) the ratio stays within $5.3$ percent of 1 (largest deviation $0.0526$, at $c$ near $0.6$). It falls away only on the far side, below $0.64$ at $c=-0.9$ and to $0.11$ at $c=-0.99$. The nucleus side also departs weakly through the cusp (Figure 4).](figures/fig6_curvature_ratio.png)
 
-# Discussion
+# Discussion {#p5.discussion}
 
 **What is proved, and its limits.** The results are stated in the Abstract and proved in Sections 3 to 6. Theorem 3 is the mechanism: any field near the Tietz field with a Kelvin-even weakening that is increasing and convex in $|\cos\theta|$ puts lower $n$ first. It is first order: its window $\epsilon_N$ depends on $N$ and is not bounded below, and no uniformity in $N$ is claimed. Corollary 4 is certified for $N\le17$; for $18\le N\le30$ the estimates are positive but not certified. Monotonicity of $h_{\rm TF}$ is a numerical observation, and $h_{\rm TF}$ is not convex near the poles, so Theorem 3 does not apply to the Thomas-Fermi field as it stands (Section 6). The reach of first order to the Thomas-Fermi field itself rests on Proposition 5, a grid check in double precision for $N\le12$: it is not certified, and between grid points it is a numerical statement. At the Thomas-Fermi end only the order inside a group is claimed, not the order between groups (see Proposition 5), and real atoms stay in the groups $N\le8$.
 
@@ -177,7 +177,7 @@ Applied to the Thomas-Fermi field at its first threshold coupling ($c_0=1.059264
 
 **Open questions.** Second order in $\epsilon$; real self-consistent fields in place of the Thomas-Fermi field; the known exceptions to the rule; and a proof for all $N$ of Corollary 4 or of the order along the path.
 
-# Reproducibility
+# Reproducibility {#p5.repro}
 
 
 All code is in the repository https://github.com/mik-tf/madelung-tie-break (version v1.0). Each script prints its own verdict line. Run the scripts from the directory `code/`, for example `nice -n 19 env OMP_NUM_THREADS=1 python3 tiebreak_proof_check.py`. From the repository root, `python3 code/run_all.py` runs the quick checks and prints one PASS or FAIL line for each; the flags `--certificate` and `--path` add the two long runs. The exact-arithmetic checks use rational numbers (sympy), so they are exact, not tolerance checks.
@@ -207,11 +207,11 @@ Figures and their data:
 
 Point counts, error sizes and run times are in Appendix A.7.
 
-# Use of AI {-}
+# Use of AI {#p5.ai .unnumbered}
 
 Claude (Anthropic) was used in November 2026, under the author's direction, for exploratory computation, derivations, code, checks, literature search and drafting.
 
-# References {-}
+# References {#p5.refs .unnumbered}
 
 [BFHS25] Bjerg, Fournais, Hearnshaw and Solovej, "The angular momentum distribution of electrons in large atoms and its deviation from Madelung's rule", arXiv:2506.14227 (2025).
 
@@ -261,9 +261,9 @@ Claude (Anthropic) was used in November 2026, under the author's direction, for 
 
 Listed but full text not consulted (see the Introduction): Y. Kitagawara and A. O. Barut, J. Phys. B 16, 3305-3327 (1983), https://doi.org/10.1088/0022-3700/16/18/006, and J. Phys. B 17, 4251-4259 (1984), https://doi.org/10.1088/0022-3700/17/21/013; V. N. Ostrovsky, J. Phys. B 14, 4425 (1981), Found. Chem. 3, 145 (2001) and Ann. N. Y. Acad. Sci. 988, 182 (2003); L. Allen and D. Knight, Int. J. Quantum Chem. 90, 80 (2002); W. Wong, J. Chem. Educ. 56, 714 (1979).
 
-# Appendix A: long proofs {-}
+# Appendix A: long proofs {#p5.app-a .unnumbered}
 
-## A.1 Lemmas A and B, and the reduction to a mean distance {-}
+## A.1 Lemmas A and B, and the reduction to a mean distance {#p5.app-a1 .unnumbered}
 
 **Reduction.** For an even law $p$ and $0\le t\le1$ we have $(|c|-t)^+=(c-t)^++(-c-t)^+$ (at most one term is nonzero), the two terms have the same mean by symmetry, and $|c-t|=2(c-t)^+-(c-t)$ with $\mathbb E\,c=0$, so
 $$\mathbb E_p(|c|-t)^+=2\,\mathbb E_p(c-t)^+=u_p(t)-t,\qquad u_p(t)=\mathbb E_p|c-t|.$$
@@ -297,7 +297,7 @@ because $e+1=j+3$ and $(e-1)/e=(j+1)/(j+2)$. The general form for $\lambda>\frac
 
 At $\lambda=\frac12$ one has $e=1$, the factor $(e-1)/e$ is $0$, and $D$ is a positive multiple of $z^{2}C'^2$, which vanishes at the interior zeros of $C'$: strictness fails pointwise there.
 
-## A.2 Lemma C and the Laguerre identity {-}
+## A.2 Lemma C and the Laguerre identity {#p5.app-a2 .unnumbered}
 
 **Lemma C.** Let $C$ be a real polynomial of degree $d\ge1$ with $d$ simple real zeros $x_1,\dots,x_d$, and $0<\gamma\le1$. Then $C'^2-\gamma CC''>0$ on all of $\mathbb R$.
 
@@ -307,7 +307,7 @@ and both sides are polynomials, so the identity holds everywhere. The right side
 
 This is a weak form of the classical Laguerre inequality; the sharp polynomial form $(d-1)C'^2-dCC''\ge0$ (Csordas and Varga 1990; arXiv:0911.1122) gives $C'^2-\gamma CC''\ge0$ for $0\le\gamma\le d/(d-1)$, so the factor $\gamma=(j+1)/(j+2)<1$ is not a close case. The real-zero hypothesis is needed ($C=x^2+1$ gives $-2$ at $0$) and holds: $C_j$ is orthogonal for a positive weight, so its $k-j$ zeros are real, simple and in $(-1,1)$ (Szegő, Thm 3.3.1). Hence $Q_j>0$ on $\mathbb R$, and by (4) $D_j>0$ on $(-1,1)$, with $D_j(\pm1)=0$. The case $k-j=1$ ($C$ linear) is covered by Lemma C.
 
-## A.3 Strictness for increasing convex $h$ {-}
+## A.3 Strictness for increasing convex $h$ {#p5.app-a3 .unnumbered}
 
 Let $h$ be bounded, increasing and convex on $[0,1]$. Then on $[0,1)$
 $$h(x)=h(0)+h'_+(0)\,x+\int_{(0,1)}(x-t)^+\,d\varpi(t),\qquad \varpi\ge0 \text{ a measure}.$$
@@ -315,7 +315,7 @@ By Tonelli,
 $$\mathbb E_{p_{2l}}[h(|c|)]-\mathbb E_{p_{2l+2}}[h(|c|)]=h'_+(0)\,H_l(0)+\int_{(0,1)}H_l\,d\varpi .$$
 Here $H_l>0$ on $[0,1)$, so the right side is positive unless $h'_+(0)=0$ and $\varpi=0$ on $(0,1)$, that is unless $h$ is constant on $[0,1)$. A jump of $h$ at $x=1$ is invisible since $P(|c|=1)=0$, so "not constant on $[0,1)$" is the exact condition. If $h$ is only $C^1$, integration by parts gives the same with $H_l(1)=0$ killing the boundary term.
 
-## A.4 The first-order step in full {-}
+## A.4 The first-order step in full {#p5.app-a4 .unnumbered}
 
 *Setting.* The problem is the pencil $-\Delta\psi=Zw(1+\epsilon g)\psi$ in $D^{1,2}(\mathbb R^3)$ with $g$ a bounded measurable function of $r$, written through $c=(R-r)/(R+r)$. The eigenvalue is a Rayleigh quotient $Z=q(\psi)/\int w(1+\epsilon g)\psi^2$, and by the Hardy bound of [P1] (3.1), $\int w\psi^2\le C\,q(\psi)$, a bounded weight change is form-bounded. For $|\epsilon|\sup|g|<1$ the family is analytic of type (B) in $\epsilon$ (Kato, *Perturbation Theory for Linear Operators*, Ch. VII).
 
@@ -329,7 +329,7 @@ with $Z_N=N(N+1)/(2R)>0$ common to all $l$ in the group. Only the even part of $
 
 *Signs.* $h=-g_{\rm even}$ is positive where the field is weakened. A weaker field needs a larger coupling, so $Z_{(N,l)}$ rises by $\epsilon Z_N\mathbb E_{p_{2l}}[h]$. If $\mathbb E_{p_{2l+2}}[h]<\mathbb E_{p_{2l}}[h]$ (Theorem 2 and A.3), then $Z_{(N,l+1)}'(0)<Z_{(N,l)}'(0)$, and by analyticity and the strict inequality of derivatives there is $\epsilon_N>0$ with $Z_{(N,l+1)}(\epsilon)<Z_{(N,l)}(\epsilon)$ for $0<\epsilon<\epsilon_N$: the level with the larger $l$, the smaller $n=N-l$, reaches its zero-energy threshold first, which is lower $n$ first (for example $3p$ before $4s$ at $N=4$). Equivalence with convexity of $-g_{\rm even}$ in $c$ on $[-1,1]$: $h(|c|)=-g_{\rm even}(c)$, and an even function is convex and increasing in $|c|$ on $[0,1]$ iff it is convex on $[-1,1]$ (it is then minimal at $0$). $\square$
 
-## A.5 The Thomas-Fermi function: enclosure and error budget {-}
+## A.5 The Thomas-Fermi function: enclosure and error budget {#p5.app-a5 .unnumbered}
 
 This appendix describes the certificate of Corollary 4 (code/tf_certificate.py). Here $\xi$ is the Thomas-Fermi variable and $x=|c|$.
 
@@ -361,7 +361,7 @@ the integral by the midpoint rule on the pieces with remainder $(\mathrm{len}^3/
 
 Every lower bound is positive for $N\le17$; the smallest is $0.00685$ at $N=17$, $l=7$, and the smallest certified fraction of the midpoint estimate is $0.57$ ($N=17$, $l=0$). For $N=18$ to $30$ the certificate fails: $123$ of the $210$ pairs with $N\le30$ have a non-positive lower bound, although all midpoint estimates are positive. The cause is enclosure width: the intervals grow about five-fold per $N$, because the Horner enclosure of the exact degree $2N$ densities over a piece suffers from alternating-coefficient dependency. A cure, not run, is to expand $p_{2l}-p_{2l+2}$ in a Taylor series of order about 20 at each piece midpoint; projected at about 70 minutes for $N=17$ to $30$.
 
-## A.6 The near-pole expansion of $h_{\rm TF}$ and the defect bound {-}
+## A.6 The near-pole expansion of $h_{\rm TF}$ and the defect bound {#p5.app-a6 .unnumbered}
 
 Orientation: in this paper the nucleus is $c=+1$. The scripts use the opposite sign, so pole-side statements below are translated to $c=+1$. Put $u=1-|c|$. The Kelvin-even $h_{\rm TF}(1-u)$ mixes the nucleus side, $r/R_{\rm T}\approx u/2$, with the far side, $r/R_{\rm T}\approx2/u$.
 
@@ -371,7 +371,7 @@ The cusp term wins as $u\to0$, so $h_{\rm TF}$ is concave for $u$ below about $9
 
 Defect bound: the concave set lies inside $|c|>1-u_0$, where Corollary 4 uses only the crude range of A.5, so the expansions are not part of the certificate; they explain Figure 4. The share of $H_0$ on $1-t<10^{-3}$ is $3.6\cdot10^{-11}$ at $N=4$ and $4.6\cdot10^{-7}$ at $N=30$ ($3.2\cdot10^{-5}$ at $N=120$), the integral of $H_0$ over $[0,1]$ falls like $1/N^2$ ($0.1$ at $N=4$, $2.2\cdot10^{-3}$ at $N=30$), and the decrease of $h_{\rm TF}'$ over the concave set is about $0.9\,\delta^{1/2}\approx3\cdot10^{-4}$ for $\delta\approx10^{-7}$.
 
-## A.7 Details of the checks {-}
+## A.7 Details of the checks {#p5.app-a7 .unnumbered}
 
 *Exact checks.* `tiebreak_proof_check.py`: all $k=N-1\le29$. `review_tiebreak_check.py`: 90 pairs; part 4 (first-order slope by shooting): relative error below $10^{-9}$ (recorded $5\cdot10^{-11}$). `tiebreak_dominance.py`: sign-change counts and dominance failures as in Section 3.
 
