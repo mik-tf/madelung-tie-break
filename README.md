@@ -2,7 +2,7 @@
 
 Author: Michaël Perreault
 
-Version 1.0.1.
+Version 1.1.1.
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24533673.svg)](https://doi.org/10.5281/zenodo.24533673)
 
@@ -44,4 +44,4 @@ It runs the quick checks and prints PASS or FAIL for each (about 5 minutes on on
 
 ## Cite as
 
-Perreault, M. A first-order Madelung tie-break on the round four-sphere: Kelvin parity, convex order and the Thomas-Fermi field, version 1.0.1. https://github.com/mik-tf/madelung-tie-break (DOI: [10.5281/zenodo.24533673](https://doi.org/10.5281/zenodo.24533673) (all versions; v1.0 is [10.5281/zenodo.24533674](https://doi.org/10.5281/zenodo.24533674))). See [CITATION.cff](CITATION.cff).
+Perreault, M. A first-order Madelung tie-break on the round four-sphere: Kelvin parity, convex order and the Thomas-Fermi field, version 1.1.1. https://github.com/mik-tf/madelung-tie-break (DOI: [10.5281/zenodo.24533673](https://doi.org/10.5281/zenodo.24533673) (all versions; v1.0 is [10.5281/zenodo.24533674](https://doi.org/10.5281/zenodo.24533674))). See [CITATION.cff](CITATION.cff).
